@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head><title>Attendance Report</title></head>
+<body>
+  <h2>Attendance Details</h2>
+  {{ table_html|safe }}
+  <h3>Overall: {{ overall['percentage'] }}%</h3>
+  <p>Present: {{ overall['present'] }}, Absent: {{ overall['absent'] }}</p>
+</body>
+</html>

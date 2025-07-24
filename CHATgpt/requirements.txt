@@ -1,0 +1,4 @@
+Flask
+selenium
+tabulate
+webdriver-manager
