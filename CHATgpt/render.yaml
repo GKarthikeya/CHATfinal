@@ -1,9 +1,12 @@
 services:
-- type: web
-  name: attendance-scraper
-  env: python
-  buildCommand: ./build.sh
-  startCommand: ./start.sh
-  envVars:
-    - key: GOOGLE_CHROME_BIN
-      value: /usr/bin/google-chrome
+  - type: web
+    name: attendance-app
+    env: python
+    buildCommand: |
+      apt-get update
+      apt-get install -y chromium chromium-driver
+      pip install -r requirements.txt
+    startCommand: ./start.sh
+    envVars:
+      - key: GOOGLE_CHROME_BIN
+        value: /usr/bin/chromium
